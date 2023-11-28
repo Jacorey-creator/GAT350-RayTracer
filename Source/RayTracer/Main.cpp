@@ -23,6 +23,7 @@ int main(int, char**)
 	}
 	SDL_Quit();
 	r->Shutdown();
+	
 	string text = "Hello World";
 	cout << text;
 	return 0;
