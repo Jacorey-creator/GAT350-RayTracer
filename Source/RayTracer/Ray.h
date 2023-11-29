@@ -16,7 +16,7 @@
 		glm::vec3 GetPoint(float distance) const { return origin + (distance * direction); }
 
 		//Overload Got help via ChatGpt
-		glm::vec3 operator()(float distance) const {
+		glm::vec3 operator*(float distance) const {
 			return GetPoint(distance);
 		}
 

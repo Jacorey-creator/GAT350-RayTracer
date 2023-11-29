@@ -29,5 +29,8 @@
     <ClInclude Include="Ray.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
