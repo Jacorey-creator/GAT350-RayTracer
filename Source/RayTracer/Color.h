@@ -6,7 +6,7 @@ using color4_t = glm::vec4;
 using rgba_t = uint32_t;
 
 
-color3_t RGBColor(float r, float g, float b)
+inline color3_t RGBColor(float r, float g, float b)
 {
     r = glm::clamp(r, 0.0f, 1.0f);
     g = glm::clamp(g, 0.0f, 1.0f);
@@ -15,7 +15,7 @@ color3_t RGBColor(float r, float g, float b)
     return color3_t(r, g, b);
 }
 
-color4_t RGBAColor(float r, float g, float b, float a)
+inline color4_t RGBAColor(float r, float g, float b, float a)
 {
     r = glm::clamp(r, 0.0f, 1.0f);
     g = glm::clamp(g, 0.0f, 1.0f);
@@ -25,7 +25,7 @@ color4_t RGBAColor(float r, float g, float b, float a)
     return color4_t(r, g, b, a);
 }
 
-rgba_t ConvertColorToUInt(const color4_t& color) 
+inline rgba_t ConvertColorToUInt(const color4_t& color) 
 {
     glm::ivec4 intColor = glm::clamp(glm::ivec4(color * 255.0f), 0, 255);
 
@@ -33,7 +33,7 @@ rgba_t ConvertColorToUInt(const color4_t& color)
     return (intColor.r << 24) | (intColor.g << 16) | (intColor.b << 8) | (intColor.a);
 }
 
-color4_t ConvertUIntToColor(rgba_t colornumber)
+inline color4_t ConvertUIntToColor(rgba_t colornumber)
 {
     float r = ((colornumber >> 24) & 0xFF) * 1.0f / 255.0f;
     float g = ((colornumber >> 16) & 0xFF) * 1.0f / 255.0f;

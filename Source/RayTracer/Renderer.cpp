@@ -1,4 +1,6 @@
+#include "Canvas.h"
 #include "Renderer.h"
+#include <iostream>
 
 bool Renderer::Initialize()
 {
@@ -34,4 +36,12 @@ bool Renderer::CreateWindow(const std::string& title, int width, int height)
 	}
 
 	return true;
+}
+
+void Renderer::PresentCanvas(const Canvas& canvas)
+{
+	// copy canvas texture to renderer
+	SDL_RenderCopy(m_renderer,canvas.m_texture,NULL,NULL);
+	// present renderer to screen
+	SDL_RenderPresent(m_renderer);
 }
