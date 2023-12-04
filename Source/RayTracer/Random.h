@@ -26,3 +26,21 @@ float random(float min, float max)
 
 	return distribution(gen);
 }
+
+inline glm::vec3 random(const glm::vec3& min, const glm::vec3& max)
+{
+	float t = random(0.0f, 1.0f);  // Generates a random value between 0 and 1
+	glm::vec3 resultVector = glm::mix(min, max, t);
+}
+
+inline glm::vec3 randomInUnitSphere()
+{
+	glm::vec3 v;
+	// generate random vectors between -1 <-> +1, return vector if length is less than 1
+	do
+	{
+		v = random(glm::vec3{ (-1, -1, -1) }, glm::vec3{(1, 1, 1)});
+	} while (glm::length(v) >= 1.0f);
+
+		return v;
+}
